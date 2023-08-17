@@ -2,25 +2,39 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <img class="background" src="images/bg-img.jpg">
 
-  <img src="images/convivium-2024.png" class="center-img">
+  <img src="images/convivium-2024-no-bg.png" class="center-img">
 
-  <p id="test"></p>
+  <p id="countdown1" class="countdown1"></p> 
+  <p id="countdown2" class="countdown2"></p>
+
+  <p id="subtitle1" class="subtitle1"></p> 
+  <p id="subtitle2" class="subtitle2"></p>
+
+  <div class="index-page-buttons" id="index-page-buttons"">
+    <button onclick="window.location.href='home.html'" class="index-page-button">Details</button>
+    <button onclick="window.location.href='registration.html'" class="index-page-button">Registration</button>
+    <button onclick="window.location.href='faq.html'" class="index-page-button">FAQ</button>
+  </div>
+
+
 
   <h5 id="msg"></h5>
 
-  <form id="emailForm">
+<!--   <form id="emailForm">
     <span> Email Address </span> <br>
     <input type="email" name="email"> <br><br>
     <input type="submit" id="sub">
-  </form>
+  </form> -->
 
   <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Sep 15, 2023 00:00:00").getTime();
+var countDownDate = new Date("Aug 28, 2023 01:12:30").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -38,15 +52,19 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Output the result
-  document.getElementById("test").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-
+  if (distance > 0) {
+    document.getElementById("countdown1").innerHTML = "Details and Registration in..."
+    document.getElementById("countdown2").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    document.getElementById("index-page-buttons").style.display = "none";
+  }
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("test").innerHTML = "CONVIVIUM 2024 IS COMING!";
+    document.getElementById("subtitle1").innerHTML = "May 16-19, 2024";
+    document.getElementById("subtitle2").innerHTML = "Pocono Springs Camp, Pennsylvania";
   }
-}, 1000);
+});
 
 
 
