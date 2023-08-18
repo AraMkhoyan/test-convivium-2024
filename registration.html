@@ -27,6 +27,107 @@
 
 <div class="w3-content" style="max-width:1100px">
 
+<div class="registration-info w3-display-container">
+  <h4 style="color:white;"> Welcome to Convivium 2024 Registration. </h4>
+  <p class="w3-large" style="color:white;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
+
+</div>
+
+<div class="reg-form w3-display-container w3-black-form w3-round-xlarge">
+  <h5 id="msg"></h5>
+
+  <h5 style="color:white;"> Convivium 2024 Initial Registration Form </h5>
+
+  <form id="registrationForm" class="registration-form">
+    <label for="fname">First Name</label><br>
+    <input type="text" id="fname" name="firstname" placeholder="Your First name..." required><br><br>
+
+    <label for="lname">Last Name</label><br>
+    <input type="text" id="lname" name="lastname" placeholder="Your Last name..." required><br><br>
+
+    <label for="fname">Email Address</label><br>
+    <input type="email" id="email" name="email" placeholder="Your Minerva University Email address..." required><br><br>
+
+    <label for="gradYear">What year did you graduate from Minerva?</label><br>
+    <select id="gradYear" name="gradYear" required>
+      <option value="" selected disabled hidden>Please select your class year</option>
+      <option value="M2019">M2019</option>
+      <option value="M2020">M2020</option>
+      <option value="M2021">M2021</option>
+      <option value="M2022">M2022</option>
+      <option value="M2023">M2023</option>
+    </select><br><br>
+
+    <label for="pronouns">What are your pronouns?</label><br>
+    <select id="pronouns" name="pronouns">
+      <option value="">Please select your prefered pronouns</option>
+      <option value="she">she/her/hers</option>
+      <option value="he">he/him/his</option>
+      <option value="they">they/them/theirs</option>
+    </select><br><br>
+
+    <label for="diet">What Dietary restrictions do you have?</label><br>
+    <select id="diet" name="diet" required onchange="showDietOtherDiv('dietOther', this)">
+      <option value="none">None</option>
+      <option value="Vegan">Vegan</option>
+      <option value="Vegetarian">Vegetarian</option>
+      <option value="Gluten-free">Gluten-free</option>
+      <option value="Pescetarian">Pescetarian</option>
+      <option value="Other" onchange="displayQuestion(this.value)" >Other. Please specify below</option>
+    </select><br><br>
+
+    <div id="dietOther" style="display:none;">
+     <label for="dietOther">Please specify your Dietary restrictions </label><br>
+     <input type="text" id="dietOtherInput" name="dietOther" placeholder="Please specify your Dietary restrictions..."><br><br>
+    </div>
+
+    <label for="accessNeed">Do you have any access needs or would you like to request for a disability accommodations?</label><br>
+    <select id="accessNeed" name="accessNeed" onchange="showAccessNeedDiv('accessNeedDetails', this)" required>
+      <option value="">None</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select><br><br>
+
+    <div id="accessNeedDetails" style="display:none;">
+     <label for="accessNeedDetails">Please specify your access needs </label><br>
+     <input type="text" id="accessNeedDetailsInput" name="accessNeedDetails" placeholder="Please specify your Accessibility needs..."><br><br>
+    </div>
+
+    <label for="paymentType">What is your prefered payment option</label><br>
+    <select id="paymentType" name="paymentType" onchange="showPaymentTypeDiv('finAid', 'paymentConfirmation', this)" required>
+      <option value="">None</option>
+      <option value="finAid">I would like to apply for Financial Aid</option>
+      <option value="payDeposit">I paid the $200 deposit fee</option>
+      <option value="payFull">I paid the $500 full participation fee</option>
+    </select><br><br>
+
+    <div id="finAid" style="display:none;">
+     <label for="finAidQuestion1">How much are you able to pay?</label><br>
+     <input type="text" id="finAidQuestion1Input" name="finAidQuestion1" placeholder="Please specify the amount you are able to pay"><br><br>
+
+      <label for="finAidQuestion2">Please specify in details why are you applying for financial aid? </label><br>
+      <textarea rows="5" cols="60"  id="finAidQuestion2Input" name="finAidQuestion2" placeholder="Please specify your Financial needs..."></textarea>
+    </div>
+
+    <div id="paymentConfirmation" style="display:none;">
+      <label for="paymentOption">What payment option did you use?</label><br>
+      <select id="paymentOptionInput" name="paymentOption">
+      <option value="">None</option>
+      <option value="venmo">Venmo</option>
+      <option value="bankTransfer">Bank Transfer</option>
+      <option value="payPal">PayPal</option>
+    </select><br><br>
+
+     <label for="paymentConfirmation">Please enter your payment confirmation number </label><br>
+     <input type="text" id="paymentConfirmationInput" name="paymentConfirmation" placeholder="Please enter your payment confirmation number"><br><br>
+    </div>
+
+
+    <br><input type="submit" id="sub">
+  </form>
+
+</div>
 
 
   <hr>
@@ -35,5 +136,56 @@
     <p>If you have any questions please contact us at <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a></p>
   </div>
 
+<script>
+  let form = document.querySelector("form");
+  // The document.querySelector() method returns the first element that matches a specified CSS selector.
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+    document.querySelector("#sub").value = "Submiting...";
+    // Change the value of the submit button to "Submitting..." while the form is being submitted.
+    let data = new FormData(form);
+    // The FormData() method creates a new FormData object that contains the values of all the form fields.
+    fetch('https://script.google.com/macros/s/AKfycbwQlZwT13d-T_t2SFrPNYAIA_g53jfm9gSAZh3VDi2y73fE-_dfHRmgmCFiHoqeY4S-Cg/exec', {
+      method: "POST",
+      body: data
+    })
+    // The fetch() method is used to make a request to the server and retrieve data.
+    // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+    .then(res => res.text())
+    // The .then() method is used to handle the response from the server.
+    // The response is converted to text using the res.text() method.
+    .then(data => {
+      document.querySelector("#msg").innerHTML = data;
+      // The innerHTML property sets or returns the HTML content of an element.
+      // Here, we are setting the content of the <h5> element to the response from the server.
+      document.querySelector("#sub").value = "Submitted"
+      // Change the value of the submit button back to "Submit" after the form has been submitted.
+    })
+    .then( event => {
+      document.getElementById("registrationForm").style.display = "none";})
+  })
+
+  function showDietOtherDiv(divId, element) {
+    document.getElementById(divId).style.display = element.value == "Other" ? 'block' : 'none';
+    document.getElementById("dietOtherInput").required = element.value == "Other" ? true : false;
+  }
+
+  function showAccessNeedDiv(divId, element) {
+    document.getElementById(divId).style.display = element.value == "yes" ? 'block' : 'none';
+    document.getElementById("accessNeedDetailsInput").required = element.value == "yes" ? true : false;
+  }
+
+  function showPaymentTypeDiv(finaid, confirmation, element) {
+    document.getElementById(finaid).style.display = element.value == "finAid" ? 'block' : 'none';
+    document.getElementById("finAidQuestion1Input").required = element.value == "finAid" ? true : false;
+    document.getElementById("finAidQuestion2Input").required = element.value == "finAid" ? true : false;
+
+    document.getElementById(confirmation).style.display =  element.value == "payDeposit" || element.value == "payFull" ? 'block' : 'none';
+    document.getElementById("paymentOptionInput").required = element.value == "payDeposit" || element.value == "payFull"  ? true : false;
+    document.getElementById("paymentConfirmationInput").required = element.value == "payDeposit" || element.value == "payFull"  ? true : false;
+  }
+
+</script>
 </body>
 </html>
