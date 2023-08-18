@@ -58,6 +58,9 @@ background-color: black;
   font-size: 60px;
   margin: 5px 0px;
   color: white;
+  background-color: rgba(85, 85, 85, 0.7); /* Dark gray color with 40% opacity */
+  padding: 10px; /* Space around the paragraph */
+  border-radius: 5px; /* Optional rounded corners */
 }
 
 
