@@ -171,6 +171,33 @@ input[type=submit]:hover {
   width: 50%;
 }
 
+.image-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* Crops the image vertically */
+}
+
+.image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the text horizontally and vertically */
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better readability */
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.nav-button {
+  font-family: 'Abril Fatface', cursive;
+}
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
