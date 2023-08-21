@@ -3,9 +3,13 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Serif:wght@300&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📑</text></svg>">
   <title>Registration</title>
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NB4LF8R9Q"></script>
 <script>
@@ -23,24 +27,26 @@
 <div class="w3-top">
   <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
     <a href="index.html"> <img src="images/convivium-2024-no-bg.png" class="logo-img"> </a>
-    <div class="w3-right w3-hide-small">
+    <div class="nav-button w3-right w3-hide-small">
       <a href="home.html" class="w3-bar-item w3-button">Details</a>
       <a href="faq.html" class="w3-bar-item w3-button">FAQ</a>
     </div>
   </div>
 </div>
 
-  <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;min-width:500px" id="home">
-  <img class="w3-image" src="images/reg-bg-img-cut.jpg" alt="Hamburger Catering" width="1500" height="600">
-  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
-    <h1 class="w3-xxlarge" style="color: white;">Event Registration</h1>
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;min-width:500px" id="home">
+  <div class="image-container">
+    <img class="w3-image" src="images/reg-bg-img-cut.jpg" alt="Hamburger Catering" width="1500" height="600">
+    <div class="text-overlay" style="padding-top: 10px;">
+      <h1 class="w3-xxlarge" style="color: white;">Event registration</h1>
+    </div>
   </div>
 </header>
 
 <div class="w3-content" style="max-width:1100px">
 
-<div class="registration-info w3-display-container">
-  <h4 style="color:white;"> Welcome to Convivium 2024 Registration. </h4>
+<div class="reg-form text-container">
+  <h3 style="color:white;">Welcome to Convivium 2024 registration. </h4>
   <p class="w3-large" style="color:white;">Fill out the form below to register to Convivium 2024. If you have any questions, contact the organizing team at <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a>.
 </p>
 
@@ -49,7 +55,7 @@
 <div class="reg-form w3-display-container w3-black-form w3-round-xlarge">
   <h5 id="msg"></h5>
 
-  <h5 style="color:white;"> Convivium 2024 Initial Registration Form </h5>
+  <h5 style="color:white;"> Convivium 2024 Registration Form </h5>
 
   <form id="registrationForm" class="registration-form">
     <label for="fname">First Name</label><br>
