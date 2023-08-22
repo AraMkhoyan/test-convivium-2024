@@ -213,8 +213,22 @@ input[type=submit]:hover {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+  font-size: 100px;
 }
+
+@media (max-width: 500px) {
+  .main-title {
+    margin-top: 80px;
+    font-size: 45px;
+  }
+  .countdown-container {
+    padding: 0px;
+    margin: 10px;
+  }
+  .countdown2{
+    font-size: 35px;
+  }
+  }
 
 details{
   background-color: #303030;
