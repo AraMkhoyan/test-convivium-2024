@@ -208,12 +208,12 @@ input[type=submit]:hover {
 .main-title{
   width: 60%;
   height: auto;
-  margin-top: 10%;
+  margin-top: 7%;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-size: 100px;
+  overflow: hidden;
 }
 
 details{
