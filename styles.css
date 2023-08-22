@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 body {
 background-color: black;
 }
@@ -198,6 +200,60 @@ input[type=submit]:hover {
 .nav-button {
   font-family: 'Abril Fatface', cursive;
 }
+
+.faq-container {
+  margin-bottom: 10px;
+}
+
+.main-title{
+  width: 60%;
+  height: auto;
+  margin-top: 10%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 100px;
+}
+
+details{
+  background-color: #303030;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+summary {
+  padding: .5em 1.3rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;  
+  transition: height 1s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:after{
+  content: "\002B";
+  float: right;
+  cursor: pointer;
+}
+
+details[open] summary {
+    border-bottom: 1px solid #aaa;
+    margin-bottom: .5em;
+}
+
+details[open] summary:after{
+  content: "\00D7";
+}
+
+details[open] .faq-answer{
+  padding: .5em 1em;
+  background-color: #353030;
+}
+
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
