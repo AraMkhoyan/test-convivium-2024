@@ -216,7 +216,7 @@ input[type=submit]:hover {
   font-size: 100px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 680px) {
   .main-title {
     margin-top: 80px;
     font-size: 45px;
