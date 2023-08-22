@@ -23,9 +23,7 @@
 <body>
   <img class="background" src="images/bg-img.png">
 
-  <!-- <img src="images/convivium-2024-no-bg.png" class="center-img"> -->
-
-  <h1 class="main-title" style="color: white;">CONVIVIUM 2024</h1>
+  <img src="images/convivium-20204-no-bg.png" class="center-img">
 
   <div class="countdown-container">
     <p id="countdown1" class="countdown1"></p> 
@@ -42,6 +40,9 @@
   </div>
 
 
+    <img src="images/seal-logo.png" class="seal-img">
+
+
   <script>
 // Set the date we're counting down to
 var countDownDate = new Date(Date.UTC(2023, 7, 28, 7, 0, 0));
@@ -52,7 +53,7 @@ var x = setInterval(function() {
   // Get today's date and time
   var now = new Date().getTime();
 
-  // Find the distance between now and the count down date
+  // Find the distance between now and the count down datemn
   var distance = countDownDate - now;
 
   // Time calculations for days, hours, minutes and seconds
@@ -63,8 +64,8 @@ var x = setInterval(function() {
 
   // Output the result:
   if (distance > 0) {
-    document.getElementById("countdown1").innerHTML = "Details and registration in..."
-    document.getElementById("countdown2").innerHTML = days + " days " + hours + "h "
+    document.getElementById("countdown1").innerHTML = "details and registration in"
+    document.getElementById("countdown2").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
   }
   // If the count down is over, write some text 

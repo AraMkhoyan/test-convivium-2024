@@ -35,9 +35,19 @@ input, textarea, select {
 /*Index page*/
 
 .center-img {
-  width: 60%;
+  width: 40%;
   height: auto;
   margin-top: 10%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.seal-img {
+  width: 100px;
+  height: auto;
+  margin-top: 12%;
   text-align: center;
   display: block;
   margin-left: auto;
@@ -58,6 +68,7 @@ input, textarea, select {
 
 .subtitle1{
   text-align: center;
+  font-family: "HelveticaNeue-Light";
   font-size: 40px;
   margin-top: 25px;
   margin-bottom: 0px;
@@ -65,6 +76,7 @@ input, textarea, select {
 }
 .subtitle2{
   text-align: center;
+  font-family: "HelveticaNeue-Light";
   font-size: 24px;
   margin: 5px 0px;
   color: white;
@@ -75,21 +87,19 @@ input, textarea, select {
 }
 
 .countdown1{
+  font-family: "HelveticaNeue-Light";
   text-align: center;
-  font-style: italic;
-  font-size: 18px;
-  margin-top: 25px;
+  font-size: 14px;
+  margin-top: 30px;
   margin-bottom: 0px;
   color: white;
 }
 .countdown2{
   text-align: center;
-  font-size: 60px;
-  margin: 5px 0px;
+  font-family: "HelveticaNeue-Light";
+  font-size: 45px;
+  margin: 0px 0px;
   color: white;
-  background-color: rgba(85, 85, 85, 0.5); /* Dark gray color with 40% opacity */
-  padding: 10px; /* Space around the paragraph */
-  border-radius: 10px; /* Optional rounded corners */
   display: inline-block; /* makes the box only as wide as its content */
 }
 
