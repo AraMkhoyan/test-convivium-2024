@@ -46,10 +46,13 @@ input, textarea, select {
 
 .seal-img {
   width: 100px;
+  position: fixed;
+  left: calc(50% - 50px);
   height: auto;
   margin-top: 12%;
   text-align: center;
   display: block;
+  bottom: 35px;
   margin-left: auto;
   margin-right: auto;
 }
