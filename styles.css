@@ -29,7 +29,8 @@ input, textarea, select {
 }
 /*Main Pages*/
 .logo-img {
-  width: 40%;
+  width: 20%;
+  height: auto;
 }
 
 /*Index page*/
@@ -55,6 +56,16 @@ input, textarea, select {
   bottom: 35px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.bottom-seal-img {
+  width: 100px;
+  height: auto;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 35px;
 }
 
 .background {
@@ -250,6 +261,7 @@ details{
 }
 
 summary {
+  font-family: "HelveticaNeue-Light";
   padding: .5em 1.3rem;
   list-style: none;
   display: flex;
@@ -277,6 +289,8 @@ details[open] summary:after{
 }
 
 details[open] .faq-answer{
+  font-family: "HelveticaNeue-Light";
+  font-size: 20px;
   padding: .5em 1em;
   background-color: #353030;
 }
@@ -428,7 +442,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
 .w3-padding-top-64{padding-top:64px!important}.w3-padding-top-48{padding-top:48px!important}
 .w3-padding-top-32{padding-top:32px!important}.w3-padding-top-24{padding-top:24px!important}
-.w3-left{float:left!important}.w3-right{float:right!important}
+.w3-left{float:left!important}.w3-right{float:right!important; margin-top:5px}
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 .w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
 .w3-hover-none:hover{box-shadow:none!important}
