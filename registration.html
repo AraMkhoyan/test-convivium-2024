@@ -111,6 +111,17 @@
     <div id="accessNeedDetails" style="display:none;">
      <label for="accessNeedDetails">Please specify your access needs </label><br>
      <input type="text" id="accessNeedDetailsInput" name="accessNeedDetails" placeholder="Please specify your Accessibility needs..."><br><br>
+
+      <div id="accessibilityCallout" class="callout">
+        <div class="callout-text">
+          <strong>Attention</strong><br>
+          <span>While the Convivium team will do their best to accommodate your accessibility needs, we do not guarantee your request will be met.</span>
+        </div>
+        <div class="callout-checkbox">
+          <input type="checkbox" id="accessibilityCheckbox" required>
+          <label for="accessibilityCheckbox">I understand that my request may not be granted.</label>
+        </div>
+      </div>
     </div>
 
     <label for="paymentType">What is your prefered payment option</label><br>
@@ -194,7 +205,12 @@
   function showAccessNeedDiv(divId, element) {
     document.getElementById(divId).style.display = element.value == "yes" ? 'block' : 'none';
     document.getElementById("accessNeedDetailsInput").required = element.value == "yes" ? true : false;
+    document.getElementById("accessibilityCheckbox").required = element.value == "yes" ? true : false;
   }
+
+  {{/*  function showAccessNeedCheckBox(divId, element) {
+    
+  }  */}}
 
   function showPaymentTypeDiv(finaid, confirmation, element) {
     document.getElementById(finaid).style.display = element.value == "finAid" ? 'block' : 'none';
