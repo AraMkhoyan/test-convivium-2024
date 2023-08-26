@@ -17,15 +17,23 @@ h3 {
   font-size: 25px;
 }
 
-
 /*Main Pages*/
 .logo-img {
   width: 20%;
   height: auto;
 }
 
-/*Index page*/
+.nav-button {
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  font-family: "HelveticaNeue-Light";
+}
 
+.nav-button:hover {
+  background-color:#ccc;
+  color:#000;
+}
+
+/*Index page*/
 .center-img {
   width: 40%;
   height: auto;
@@ -57,6 +65,37 @@ h3 {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 35px;
+}
+
+/*Registration page*/
+.callout {
+  background-color: rgba(24, 175, 245, 0.7);
+  color: white;
+  padding: 15px;
+  margin: 10px 0;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.callout-text {
+  flex: 1;
+}
+
+.callout-text span {
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+.callout-checkbox {
+  flex: 1;
+  text-align: left;
+}
+
+/* Style the checkbox label */
+.callout-checkbox label {
+  margin-left: 10px;
 }
 
 .background {
@@ -147,6 +186,20 @@ h5 {
   background-color: #555555;
   color: white;
   cursor: pointer;
+}
+
+/*Home page*/
+.home-image {
+  transition: box-shadow .5s;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  opacity: 0.75;
+  border-radius: 20px;
+}
+
+.home-image:hover {
+  box-shadow: 0px 0px 5px 3px rgba(128, 128, 128, 0.3);
 }
 
 input[type=text], input[type=email], textarea, select, option {
