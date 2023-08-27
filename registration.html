@@ -22,12 +22,9 @@
 
 <body class="reg-body">
 
-<!--   <img class="background" src="images/reg-bg-img.jpg">
- -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
-<!--     <a href="index.html" class="w3-bar-item w3-button">CONVIVIUM 2024</a>
- -->    <a href="index.html"> 
+   <a href="index.html"> 
       <img src="images/convivium-2024-no-bg.PNG" class="logo-img">
    </a> 
    <div class="w3-right">
@@ -131,9 +128,9 @@
     <label for="lname">Last name</label><br>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..." required><br><br>
 
+    <div id="email-message" class="email-val-message"></div>
     <label for="email">Email address</label><br>
     <input type="email" id="email" name="email" placeholder="Your Minerva University email address..." required><br><br>
-    <div id="email-message"></div>
 
     <label for="gradYear">What year did you graduate from Minerva?</label><br>
     <select id="gradYear" name="gradYear" required>
@@ -273,7 +270,35 @@
 <script>
   let form = document.querySelector("form");
   // The document.querySelector() method returns the first element that matches a specified CSS selector.
+  let isValidEmail = false;
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("email");
+    const message = document.getElementById("email-message");
+
+    emailInput.addEventListener('input', (e) => {
+      e.preventDefault();
+      const emailValue = emailInput.value;
+      // Regular expression to match the domain after '@'
+      const regex = /@(uni\.minerva\.edu|minerva\.kgi\.edu)$/;
+
+      if (regex.test(emailValue)) {
+        message.textContent = "Valid email domain.";
+        message.style.color = "green";
+        isValidEmail = true;
+        // You can proceed with form submission here
+      } else {
+        message.textContent = "Invalid email domain. Please use a valid Minerva University email address.";
+        message.style.color = "red";
+        isValidEmail = false;
+      }
+    })
+  })
+
   form.addEventListener('submit', (e) => {
+    if (!isValidEmail) {
+      e.preventDefault();
+      alert('Please enter a valid Minerva University-domain address before submitting.')
+    } else {
     e.preventDefault();
     // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
     document.querySelector("#sub").value = "Submitting...";
@@ -298,6 +323,7 @@
     })
     .then( event => {
       document.getElementById("registrationForm").style.display = "none";})
+    }
   })
 
   function showDietOtherDiv(divId, element) {
@@ -317,8 +343,6 @@
 
   document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("registrationForm");
-    const emailInput = document.getElementById("email");
-    const message = document.getElementById("email-message");
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();  // Prevent the form from submitting
@@ -334,7 +358,7 @@
       } else {
         message.textContent = "Invalid email domain. Please use a valid Minerva University email address.";
         message.style.color = "red";
-        doumnet.getElementById("email").value = "";
+        document.getElementById("email").value = "";
       }
     });
   });
