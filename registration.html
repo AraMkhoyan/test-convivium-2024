@@ -272,7 +272,7 @@
           <span>Any amount paid that exceeds $500 will be considered as a donation.</span>
         </div>
         <div class="callout-checkbox">
-          <input type="checkbox" id="regularRoomCheckbox">
+        <input type="checkbox" id="regularRoomCheckbox">
           <label for="regularRoomCheckbox">I understand that I paid at least $500 using the above mentioned method and any amount above it is considered as a donation.</label>
         </div>
       </div>
@@ -314,7 +314,7 @@
       e.preventDefault();
       const emailValue = emailInput.value;
       // Regular expression to match the domain after '@'
-      const regex = /@(uni\.minerva\.edu|minerva\.kgi\.edu)$/;
+      const regex = /@(uni\.minerva\.edu)$/;
 
       if (regex.test(emailValue)) {
         message.textContent = "Valid email domain.";
