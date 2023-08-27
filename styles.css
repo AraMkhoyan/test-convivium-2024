@@ -21,6 +21,23 @@ h3 {
 .logo-img {
   width: 20%;
   height: auto;
+  margin-top: 8px;
+}
+
+.home-body{
+    font-family: "HelveticaNeue-Light";
+}
+
+.reg-body{
+    font-family: "HelveticaNeue-Light";
+}
+
+.faq-body{
+    font-family: "HelveticaNeue-Light";
+}
+
+.index-body{
+    font-family: "HelveticaNeue-Light";
 }
 
 .nav-button {
@@ -238,6 +255,7 @@ input[type=submit]:hover {
   margin: 15px 15px;
   border-radius: 5px;
   padding: 20px;
+  font-family: "HelveticaNeue-Light";
 }
 
 .registration-form{
