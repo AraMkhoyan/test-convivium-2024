@@ -145,13 +145,18 @@
     </select><br><br>
 
     <label for="pronouns">What are your pronouns?</label><br>
-    <select id="pronouns" name="pronouns">
+    <select id="pronouns" name="pronouns" required onchange="showDietOtherDiv('pronOther', this)">
       <option value="">Please select your prefered pronouns</option>
       <option value="she">she/her/hers</option>
       <option value="he">he/him/his</option>
       <option value="they">they/them/theirs</option>
       <option value="Other" onchange="displayQuestion(this.value)" >Other. Please specify below</option>
     </select><br><br>
+
+    <div id="pronOther" style="display:none;">
+     <label for="pronOther">Please specify your pronouns </label><br>
+     <input type="text" id="pronOtherInput" name="pronOther" placeholder="Please specify your pronouns..."><br><br>
+    </div>
 
     <label for="diet">What Dietary restrictions do you have?</label><br>
     <select id="diet" name="diet" required onchange="showDietOtherDiv('dietOther', this)">
