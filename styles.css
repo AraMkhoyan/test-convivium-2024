@@ -45,6 +45,7 @@ h3 {
 
 .policy-list{
   text-align: left;
+  overflow-wrap: break-word;
 }
 
 .seal-img {
@@ -295,6 +296,9 @@ input[type=submit]:hover {
   }
   .countdown2{
     font-size: 35px;
+  }
+  .registration-form{
+    width: 80%;
   }
   }
 
