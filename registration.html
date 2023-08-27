@@ -60,21 +60,21 @@
           <li>United States:</li>
             <ul>
               <li>Venmo: <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024 </a> </li>
-              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024 </a>. Please select "For Friends and Family" option. </li>
+              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>. Please select "For Friends and Family" option. </li>
             </ul>
           <li>Europe:</li>
             <ul>
               <li>Bank Transfer: IBAN: LT66 3250 0925 6384 2300; BIC: REVOLT21 </li>
-              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024 </a> </li>
+              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>. Please select "For Friends and Family" option. </li>
             </ul>
           <li>UK:</li>
             <ul>
               <li>Bank Transfer: Sort Code: 04-00-75; Account Number: 45773793</li>
-              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024 </a> </li>
+              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>. Please select "For Friends and Family" option. </li>
             </ul>
           <li>Rest of the world:</li>
             <ul>
-              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024 </a> </li>
+              <li>PayPal: <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>. Please select "For Friends and Family" option. </li>
             </ul>
         </ul>
         <li>You are responsible for any transfer fees associated with your transfer (e.g., currency exchange fees or transfer fees if using PayPal tranfer form outside the US). The Convivium team should receive the amounts specified in USD below to confirm the registration. If none of the payment options work for you, please reach out to us at convivium2024@gmail.com to request additional payment options.</li>
@@ -224,22 +224,36 @@
 
     <div id="paymentConfirmation" style="display:none;">
       <label for="paymentOption">What payment option did you use?</label><br>
-      <select id="paymentOptionInput" name="paymentOption">
+      <select id="paymentOptionInput" name="paymentOption" onchange="showPaymentDetails(this)">
       <option value="">None</option>
       <option value="venmo">Venmo (US only) </option>
       <option value="bankTransfer">Bank Transfer (EU and UK only) </option>
       <option value="payPal">PayPal</option>
-    </select><br><br>
+    </select> <br><br>
+
+      <div id="venmo-details" class="callout" style="display:none;"> <p> Please use the following link for Venmo Payments <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024</a>. Please include "Convivium + Your Full Name" on the tranfer note. </p> </div>
+
+      <div id="paypal-details" class="callout" style="display:none;"> <p> Please use the following link for PayPal Payments <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>. Please make sure that Convivium team recieves the exact amount as any foreign exchange and transfer fees are your responsibility. Please include "Convivium + Your Full Name" on the tranfer note. </p> </div>
+
+      <div id="bank-details" class="callout" style="display:none;"> <p> This option is only available for payments from EU or UK. Please use the following Bank Transfer Details. </p> 
+      <p> UK Transfers: </p>
+      <ul>
+        <li>Sort Code: 04-00-75</li>
+        <li>Account Number: 45773793</li>
+      </ul>
+      <p> EU Transfers: </p> 
+      <ul>
+        <li>IBAN: LT66 3250 0925 6384 2300</li>
+        <li>BIC: REVOLT21</li>
+      </ul>
+      <p>Please include "Convivium + Your Full Name" on the tranfer note.</p>
+      </div>
 
      <label for="paymentConfirmation">Please enter your payment confirmation number </label><br>
      <input type="text" id="paymentConfirmationInput" name="paymentConfirmation" placeholder="Please enter your payment confirmation number"><br><br>
 
      <label for="donation">If you donated any ammount to, Minerva Alumni council's funds please specify the amount below?</label><br>
      <input type="text" id="donation" name="donation" placeholder="Please specify donation amount, if any."><br><br>
-
-<!--     <div class="payment-type-details">
-      <div id="venmo-option" style="display:none;"> <p> Please use the following link for Venmo Payments <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024 </a> </p> </div>
-    </div> -->
 
       <div id="singleRoomCallout" class="callout" style="display:none;">
         <div class="callout-text">
@@ -251,8 +265,29 @@
           <label for="singleRoomCheckbox">I understand that my request may not be granted.</label>
         </div>
       </div>
-    </div>
 
+    <div id="regularRoomCallout" class="callout" style="display:none;">
+        <div class="callout-text">
+          <strong>Attention</strong><br>
+          <span>Any amount paid that exceeds $500 will be considered as a donation.</span>
+        </div>
+        <div class="callout-checkbox">
+          <input type="checkbox" id="regularRoomCheckbox">
+          <label for="regularRoomCheckbox">I understand that I paid at least $500 using the above mentioned method and any amount above it is considered as a donation.</label>
+        </div>
+      </div>
+
+    <div id="regularDepositCallout" class="callout" style="display:none;">
+        <div class="callout-text">
+          <strong>Attention</strong><br>
+          <span>Any amount paid that exceeds $200 will be considered as a donation.</span>
+        </div>
+        <div class="callout-checkbox">
+          <input type="checkbox" id="regularDepositCheckbox">
+          <label for="regularDepositCheckbox">I understand that I paid at least $200 using the above mentioned method and any amount above it is considered as a donation. I am still responsible to pay the remaining $325 (or $300 with Early Bird discount) due January 15.</label>
+        </div>
+      </div>
+    </div>
 
     <br><input type="submit" id="sub">
   </form>
@@ -379,7 +414,18 @@
     document.getElementById("singleRoomCallout").style.display =  element.value == "paySingleRoomDeposit" ? 'block' : 'none';
     document.getElementById("singleRoomCheckbox").required = element.value == "paySingleRoomDeposit" ? true : false;
 
-    // document.getElementById("venmo-option").style.display =  element.value == "venmo" ? 'block' : 'none';
+    document.getElementById("regularRoomCallout").style.display =  element.value == "payFull" ? 'block' : 'none';
+    document.getElementById("regularRoomCheckbox").required = element.value == "payFull" ? true : false;
+
+    document.getElementById("regularDepositCallout").style.display =  element.value == "payOnlyDeposit" ? 'block' : 'none';
+    document.getElementById("regularDepositCheckbox").required = element.value == "payOnlyDeposit" ? true : false;
+  }
+
+  function showPaymentDetails(element){
+    document.getElementById("venmo-details").style.display = element.value == "venmo" ? 'block' : 'none';
+    document.getElementById("paypal-details").style.display = element.value == "payPal" ? 'block' : 'none';
+    document.getElementById("bank-details").style.display = element.value == "bankTransfer" ? 'block' : 'none';
+
   }
 
 </script>
