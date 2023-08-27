@@ -131,7 +131,7 @@
     <label for="lname">Last Name</label><br>
     <input type="text" id="lname" name="lastname" placeholder="Your Last name..." required><br><br>
 
-    <label for="fname">Email Address</label><br>
+    <label for="email">Email Address</label><br>
     <input type="email" id="email" name="email" placeholder="Your Minerva University Email address..." required><br><br>
 
     <label for="gradYear">What year did you graduate from Minerva?</label><br>
@@ -218,7 +218,7 @@
           <span>Financial aid applications rely on donations made by other attendees. Funds will be disbursed on a need-basis.</span>
         </div>
         <div class="callout-checkbox">
-          <input type="checkbox" id="finaidCheckbox" required>
+          <input type="checkbox" id="finaidCheckbox">
           <label for="finaidCheckbox">I understand that my financial aid application does not guarantee a free or reduced ticket price.</label>
         </div>
       </div>
@@ -239,13 +239,17 @@
      <label for="donation">If you donated any ammount to, Minerva Alumni council's funds please specify the amount below?</label><br>
      <input type="text" id="donation" name="donation" placeholder="Please specify donation amount, if any."><br><br>
 
+<!--     <div class="payment-type-details">
+      <div id="venmo-option" style="display:none;"> <p> Please use the following link for Venmo Payments <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024 </a> </p> </div>
+    </div> -->
+
       <div id="singleRoomCallout" class="callout" style="display:none;">
         <div class="callout-text">
           <strong>Attention</strong><br>
           <span>While the Convivium team will do their best to accommodate your Single Room request needs, we do not guarantee your request will be met.</span>
         </div>
         <div class="callout-checkbox">
-          <input type="checkbox" id="singleRoomCallout" required>
+          <input type="checkbox" id="singleRoomCheckbox">
           <label for="singleRoomCheckbox">I understand that my request may not be granted.</label>
         </div>
       </div>
@@ -318,10 +322,15 @@
     document.getElementById(confirmation).style.display =  element.value == "payOnlyDeposit" || element.value == "payFull" || element.value == "paySingleRoomDeposit" ? 'block' : 'none';
     document.getElementById("paymentOptionInput").required = element.value == "payOnlyDeposit" || element.value == "payFull"  || element.value == "paySingleRoomDeposit" ? true : false;
     document.getElementById("paymentConfirmationInput").required = element.value == "payOnlyDeposit" || element.value == "payFull"  || element.value == "paySingleRoomDeposit" ? true : false;
+    
+    document.getElementById("finaidCheckbox").required = element.value == "finAid" ? true : false;
+
+    
 
     document.getElementById("singleRoomCallout").style.display =  element.value == "paySingleRoomDeposit" ? 'block' : 'none';
-    document.getElementById("paySingleRoomDeposit").required = element.value == "paySingleRoomDeposit" ? true : false;
-    document.getElementById("paySingleRoomDeposit").required = element.value == "paySingleRoomDeposit" ? true : false;
+    document.getElementById("singleRoomCheckbox").required = element.value == "paySingleRoomDeposit" ? true : false;
+
+    // document.getElementById("venmo-option").style.display =  element.value == "venmo" ? 'block' : 'none';
   }
 
 </script>
