@@ -201,7 +201,8 @@
       <option value="">None</option>
       <option value="finAid">I would like to apply for Financial Aid</option>
       <option value="payOnlyDeposit">I paid the $200 deposit fee</option>
-      <option value="pay500">I paid the $500 single room deposit or full participation fee</option>
+      <option value="payFull">I paid the $500 full ticket fee</option>
+      <option value="paySingleRoomDeposit">I paid the $500 Single Room deposit</option>
     </select><br><br>
 
     <div id="finAid" style="display:none;">
@@ -218,26 +219,17 @@
         </div>
         <div class="callout-checkbox">
           <input type="checkbox" id="finaidCheckbox" required>
-          <label for="finaidCheckbox">I understand that my financial aid application does not guarantee a reduced ticket price.</label>
+          <label for="finaidCheckbox">I understand that my financial aid application does not guarantee a free or reduced ticket price.</label>
         </div>
       </div>
     </div>
-
-    <div id="paymentPurpose" style="display:none;">
-      <label for="paymentPurposeInput">Are you applying for Single Room accomodation or paying the full participation fee in a shared room?</label><br>
-      <select id="paymentPurposeInput" name="paymentPurposeInput">
-      <option value="">None</option>
-      <option value="SingleRoom">I am applying for Single Room</option>
-      <option value="FullPayment">I paid the full ticket price for shared room</option>
-    </select><br><br>
-   </div>
 
     <div id="paymentConfirmation" style="display:none;">
       <label for="paymentOption">What payment option did you use?</label><br>
       <select id="paymentOptionInput" name="paymentOption">
       <option value="">None</option>
-      <option value="venmo">Venmo</option>
-      <option value="bankTransfer">Bank Transfer</option>
+      <option value="venmo">Venmo (US only) </option>
+      <option value="bankTransfer">Bank Transfer (EU and UK only) </option>
       <option value="payPal">PayPal</option>
     </select><br><br>
 
@@ -246,6 +238,17 @@
 
      <label for="donation">If you donated any ammount to, Minerva Alumni council's funds please specify the amount below?</label><br>
      <input type="text" id="donation" name="donation" placeholder="Please specify donation amount, if any."><br><br>
+
+      <div id="singleRoomCallout" class="callout" style="display:none;">
+        <div class="callout-text">
+          <strong>Attention</strong><br>
+          <span>While the Convivium team will do their best to accommodate your Single Room request needs, we do not guarantee your request will be met.</span>
+        </div>
+        <div class="callout-checkbox">
+          <input type="checkbox" id="singleRoomCallout" required>
+          <label for="singleRoomCheckbox">I understand that my request may not be granted.</label>
+        </div>
+      </div>
     </div>
 
 
@@ -312,11 +315,13 @@
     document.getElementById("finAidQuestion1Input").required = element.value == "finAid" ? true : false;
     document.getElementById("finAidQuestion2Input").required = element.value == "finAid" ? true : false;
 
-    document.getElementById(confirmation).style.display =  element.value == "payOnlyDeposit" || element.value == "pay500" ? 'block' : 'none';
-    document.getElementById("paymentPurpose").style.display = element.value == "pay500" ? 'block' : 'none';
-    document.getElementById("paymentOptionInput").required = element.value == "payOnlyDeposit" || element.value == "pay500"  ? true : false;
-    document.getElementById("paymentConfirmationInput").required = element.value == "payOnlyDeposit" || element.value == "pay500"  ? true : false;
-    document.getElementById("paymentPurposeInput").required = element.value == "pay500"  ? true : false;
+    document.getElementById(confirmation).style.display =  element.value == "payOnlyDeposit" || element.value == "payFull" || element.value == "paySingleRoomDeposit" ? 'block' : 'none';
+    document.getElementById("paymentOptionInput").required = element.value == "payOnlyDeposit" || element.value == "payFull"  || element.value == "paySingleRoomDeposit" ? true : false;
+    document.getElementById("paymentConfirmationInput").required = element.value == "payOnlyDeposit" || element.value == "payFull"  || element.value == "paySingleRoomDeposit" ? true : false;
+
+    document.getElementById("singleRoomCallout").style.display =  element.value == "paySingleRoomDeposit" ? 'block' : 'none';
+    document.getElementById("paySingleRoomDeposit").required = element.value == "paySingleRoomDeposit" ? true : false;
+    document.getElementById("paySingleRoomDeposit").required = element.value == "paySingleRoomDeposit" ? true : false;
   }
 
 </script>
