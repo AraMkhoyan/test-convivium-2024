@@ -131,7 +131,7 @@
   <h5 id="msg"></h5>
 
   <h5 id="formTitle1" style="color:white;"> Convivium 2024 Initial Registration Form </h5>
-  <p id="formTitle2" style="color:white;"> Form submission and deposit payment are due October 1, 2023 11:59pm Pacific Time. Your form will be successfully submitted if you see a Thank You note after clicking the 'Submit' button. If you face any technical difficulties fillig in the form, please try reloading or reaching out to <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a></p>
+  <p id="formTitle2" style="color:white;"> Form submission and deposit payment are due October 1, 2023 11:59pm Pacific Time. Your form will be successfully submitted if you see a Thank You note after clicking the 'Submit' button. If you face any technical difficulties filling up the form, please try reloading or reaching out to <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a>.</p>
 
   <form id="registrationForm" class="registration-form">
     <label for="fname">First name</label><br>
@@ -155,7 +155,7 @@
     </select><br><br>
 
     <label for="pronouns">What are your pronouns?</label><br>
-    <select id="pronouns" name="pronouns" required onchange="showDietOtherDiv('pronOther', this)">
+    <select id="pronouns" name="pronouns" required onchange="showPronOtherDiv('pronOther', this)">
       <option value="">Please select your prefered pronouns</option>
       <option value="she">she/her/hers</option>
       <option value="he">he/him/his</option>
@@ -385,6 +385,11 @@
   function showDietOtherDiv(divId, element) {
     document.getElementById(divId).style.display = element.value == "Other" ? 'block' : 'none';
     document.getElementById("dietOtherInput").required = element.value == "Other" ? true : false;
+  }
+
+  function showPronOtherDiv(divId, element) {
+    document.getElementById(divId).style.display = element.value == "Other" ? 'block' : 'none';
+    document.getElementById("pronOtherInput").required = element.value == "Other" ? true : false;
   }
 
   function showAccessNeedDiv(divId, element) {
