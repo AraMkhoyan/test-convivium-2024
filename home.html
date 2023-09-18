@@ -96,13 +96,41 @@
     </div>
   </div>
 
-  <hr>
-
+<hr>
+<div>
+  <h2>Share the event with your friends</h2>
+  <p class="c2c-text" id="share-text">
+    Hey! I'm going to Convivium next May. Wanna join? Sign up here: https://convivium2024.com/registration.html
+  </p>
+  <button id="c2c-button" onclick="copyText()">Copy to clipboard</button>
+  <span id="tooltip">Copied!</span>
+</div>
 
 <div class="w3-container w3-padding-64" id="contact" style="color:white;">
     <h1>Contact</h1><br>
     <p>If you have any questions please contact us at <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a></p>
-  </div>
+</div>
+
+<script>
+  function copyText() {
+    let shareText = document.getElementById("share-text");
+    const textToCopy = shareText.textContent || shareText.innerText;
+
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        const tooltip = document.getElementById('tooltip');
+        const button = document.getElementById('c2c-button');
+        tooltip.style.display = "inline";
+        tooltip.style.left = (button.offsetLeft + button.offsetWidth + 10) + 'px';
+        tooltip.style.top = button.offsetTop + 'px';
+        setTimeout(() => {
+        tooltip.style.display = "none";}, 2000)
+      })
+      .catch((err) => {
+        console.error("Something went wrong: " + err)
+      });
+  }
+</script>
 
 </body>
 </html>
