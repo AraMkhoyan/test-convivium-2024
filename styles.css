@@ -354,7 +354,7 @@ input[type=submit]:hover {
   .registration-form{
     width: 80%;
   }
-  }
+}
 
 details{
   background-color: #303030;
@@ -425,16 +425,16 @@ details[open] .class-list{
 .invites-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 200px 80px 80px 40px 1fr 1fr;
+  grid-template-rows: 200px 80px 80px 1fr 40px 1.2fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
     "header1 header1 header1 header1 header1"
     "names1 . names3 . names5"
     ". names2 . names4 ."
-    "details1 details1 details1 details1 details1 "
-    "col1 col2 col3 col4 col5"
-    "footer1 footer1 . footer2 footer2";
+    ". footer2 footer2 footer2 ."
+    "details1 details1 details1 details1 details1"
+    "col1 col2 col3 col4 col5";
 }
 
 .header1 { grid-area: header1; }
@@ -444,13 +444,24 @@ details[open] .class-list{
 .names4 { grid-area: names4; max-height: 100px;}
 .names5 { grid-area: names5;  max-height: 100px;}
 .details1 { grid-area: details1;}
-.col1 { grid-area: col1; }
-.col2 { grid-area: col2; }
-.col3 { grid-area: col3; }
-.col4 { grid-area: col4; }
-.col5 { grid-area: col5; }
+.col1 { grid-area: col1; z-index: 1;}
+.col2 { grid-area: col2; z-index: 1;}
+.col3 { grid-area: col3; z-index: 1;}
+.col4 { grid-area: col4; z-index: 1;}
+.col5 { grid-area: col5; z-index: 1;}
 .footer2 { grid-area: footer2; }
 .footer1 { grid-area: footer1; }
+
+@media (max-width: 680px) {
+  .invites-body{
+    display: none;
+  }
+}
+@media (min-width:  680px) {
+  .invites-small-screen-text {
+    display: none;
+  }
+}
 
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */

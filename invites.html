@@ -21,9 +21,11 @@
 </script>
 
 <body>
-
-
+  <div class="invites-small-screen-text" style="color: white; position: absolute; margin: 30px;">
+    <h2> Please use larger device (laptop/PC) to view this page.</h2>
   </div>
+
+  <div class="invites-body">
   <img id= "convivium-logo-img" src="images/convivium-2024-no-bg.PNG" class="center-img">
 
 <div  class="reg-form w3-display-container w3-round-xlarge" >
@@ -150,9 +152,36 @@
     </div>
   </div>
   
-  <div class='details1'>
-    <p id="see-details" class="invites-title3" style="display: none;"> Press the buttons below too see the full list of registered participants from... </p> 
+  <div class="footer1"></div>
+
+  <div class="footer2" id="invite-form" style="display: none;">
+    
+<div class="reg-form w3-display-container w3-black-form w3-round-xlarge">
+  <h5 id="msg"></h5>
+
+  <h5 id="formTitle1" style="color:white;"> Send personalized invite to your friend to join Convivium 2024</h5>
+  <p id="formTitle2" style="color:white;"> Once you submit this form, we will send an invitation email to your friend with your personalized notes, inviting them to register for the event.</p>
+
+  <form id="inviteForm" class="registration-form">
+    <label for="friendName">Your Friend's Name</label><br>
+    <input type="text" id="friendName" name="friendName" placeholder="Your friend's first name..." required><br><br>
+
+    <label for="friendEmail">Your Friend's Minerva Email Address</label><br>
+    <input type="email" id="friendEmail" name="friendEmail" placeholder="Your friend's Minerva University email address..." required><br><br>
+
+    <label for="message">Add a personalized message to your invite.</label><br>
+    <textarea rows="5" cols="60"  id="message" name="message" placeholder="Please specify your financial needs..."></textarea>
+
+    <br><input type="submit" id="subInvite">
+  </form>
+
+</div>
   </div>
+
+  <div class='details1'>
+    <p id="see-details" class="invites-title3" style="display: none;"> You can expand each class to see full list of participants from that class.</p> 
+  </div>
+
   <div id="col1" class="col1" style="display: none;">
     <div class="class-names-container">
   <details class='summary-box'>
@@ -198,9 +227,6 @@
     </details>
     </div>
   </div>
-  
-  <div class="footer2"></div>
-  <div class="footer1"></div>
   </div>
 
   <img src="images/seal-logo.PNG" class="seal-img" id="seal-img">
@@ -223,12 +249,12 @@
     function random(mn, mx) {
       return Math.random() * (mx - mn) + mn;}
 
-    let form = document.querySelector("form");
+    // let form = document.querySelector("form");
+    let form = document.getElementById("emailSubmit");
 
       let isValidEmail = false;
   document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
-    const message = document.getElementById("email-message");
 
     emailInput.addEventListener('input', (e) => {
       e.preventDefault();
@@ -237,13 +263,8 @@
       const regex = /@(uni\.minerva\.edu)$/;
 
       if (regex.test(emailValue)) {
-        // message.textContent = "Valid email domain.";
-        // message.style.color = "green";
         isValidEmail = true;
-        // You can proceed with form submission here
       } else {
-        // message.textContent = "Invalid email domain. Please use a valid Minerva University email address.";
-        // message.style.color = "red";
         isValidEmail = false;
       }
     })
@@ -254,7 +275,6 @@
       e.preventDefault();
       alert('Please enter a valid Minerva University-domain address before submitting.')
     } else {
-      console.log('ready')
       e.preventDefault();
       // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
       document.querySelector("#sub").value = "Submitting...";
@@ -268,11 +288,8 @@
       const data = [];
 
       init()
-      // const output = document.querySelector('.output');
-      // const div = document.createElement('div')
 
     function init(){
-      console.log('calling google')
       fetch(url)
       .then(res => res.text())
       .then(rep => {
@@ -327,13 +344,6 @@
         }
     })
 
-    // console.log("M19: ", m19_names)
-    // console.log("M20: ", m20_names)
-    // console.log("M21: ", m21_names)
-    // console.log("M22: ", m22_names)
-    // console.log("M23: ", m23_names)
-
-
     displayMessage(emails)
   })
   }
@@ -342,11 +352,13 @@
     const emailInput = document.getElementById("email").value;
 
     userName = "";
+    fulluserName = "";
     userEmail = "";
 
     data.forEach((user) => {
       if(user['email'] == emailInput) {
         userName = user['name']
+        fulluserName = user['name'] + " " + user['lname']
         userEmail = user['email']
       }
     })
@@ -373,15 +385,67 @@
       document.getElementById("m23-class-list").innerHTML += name + "<br>";
     })
 
+    // INVITE FORM
+    let inviteForm = document.getElementById("inviteForm")
+    let isValidFriendEmail = false;
+    // document.addEventListener("DOMContentLoaded", function () {
+    const friendEmailInput = document.getElementById("friendEmail");
 
-    // console.log("RANDOM NAME FROM M19: ",  m19_names[(Math.floor(random(1, m19_names.length))) - 1]);
+      friendEmailInput.addEventListener('input', (e) => {
+        e.preventDefault();
+        const friendEmailValue = friendEmailInput.value;
+        const required_domain = /@(uni\.minerva\.edu)$/;
+        if (required_domain.test(friendEmailValue)) {
+          isValidFriendEmail = true;
+        } else {
+          isValidFriendEmail = false;
+        }
+      })
+    // })
+    inviteForm.addEventListener('submit', (e) => {
+        if (!isValidFriendEmail) {
+        e.preventDefault();
+        alert('Please enter a valid Minerva University-domain address before submitting.')
+      } else {
+        e.preventDefault();
+        document.querySelector("#subInvite").value = "Submitting...";
+
+        let inviteData = new FormData(inviteForm);
+        inviteData.append('senderName', fulluserName);
+        inviteData.append('senderEmail', emailInput);
+        // The FormData() method creates a new FormData object that contains the values of all the form fields.
+        fetch('https://script.google.com/macros/s/AKfycbxVN1pxbic5Fj72xQK8UItUlq6ic35p8UEaWEffmnXdfb5IpGjMfVnKbfPkiEP3gM2q/exec', {
+          method: "POST",
+          body: inviteData
+        })
+        // The fetch() method is used to make a request to the server and retrieve data.
+        // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+        .then(res => res.text())
+        // The .then() method is used to handle the response from the server.
+        // The response is converted to text using the res.text() method.
+        .then(data => {
+          document.querySelector("#msg").innerHTML = data;
+          document.querySelector("#sub").value = "Submitted"
+        })
+        .then( event => {
+          if (emails.includes(friendEmailInput.value)) {
+            document.getElementById("formTitle1").innerHTML = "Your friend already registered!"
+          } else {
+            document.getElementById("formTitle1").innerHTML = "Your invitation is on the way!"
+          }
+          document.getElementById("formTitle2").innerHTML = "If you would like to send more invites, please reload this page and submit a new invitiation form."
+          document.getElementById("inviteForm").style.display = "none";
+        })
+      }
+    })
+
 
     if (userName != "") {
       document.getElementById("title1").innerHTML = "Hello " + userName + "!";
       document.getElementById("title2").innerHTML = "Looks like you already registered for Convivium 2024 - Yuhuu! Now it's time to see which of your friends will be joining you and send personalized invites to those who have not registered yet.";
     } else {
        document.getElementById("title1").innerHTML = "Hello Minervan!";
-       document.getElementById("title2").innerHTML = "Hmm... Looks like you have not registered for Convivium 2024 yet. No worries, take a look at who will be there from your friends and head over to Registration page to submit your participation before October 1, 2023. Don't forget to invite your other friends too!";
+       document.getElementById("title2").innerHTML = "Hmm... Looks like you have not registered for Convivium 2024 yet. No worries, take a look at who will be there from your friends and head over to <a href='registration.html'>Registration page</a> to submit your participation before October 1, 2023. Don't forget to invite your other friends too!";
     }
     document.getElementById("emailSubmit").style.display = "none";
     document.getElementById("seal-img").style.display = "none";
@@ -392,16 +456,16 @@
     document.getElementById("wrapper-scroll-m22").style.display = "block";
     document.getElementById("wrapper-scroll-m23").style.display = "block";
     document.getElementById("see-details").style.display = "block";
+    document.getElementById("invite-form").style.display = "block";
     document.getElementById("col1").style.display = "block";
     document.getElementById("col2").style.display = "block";
     document.getElementById("col3").style.display = "block";
     document.getElementById("col4").style.display = "block";
     document.getElementById("col5").style.display = "block";
-
-  }
-  }})
+   }
+   }})
 
 </script>
-
+</div>
 </body>
 </html>
