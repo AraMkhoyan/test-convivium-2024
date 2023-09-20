@@ -38,8 +38,8 @@
 
  <div class="invites-grid">
   <div class="header1">
-      <p id="title1" class="invites-title1"></p> 
-      <p id="title2" class="invites-title2"></p> <br><br>
+      <p id="title1" class="invites-title1" style="margin-right: 10%; margin-left: 10%; margin-top: -10px;"></p> 
+      <p id="title2" class="invites-title2" style="margin-right: 10%; margin-left: 10%;"></p> <br><br>
   </div>
   <div class="names1">
     <div id="wrapper-scroll-m19" class="wrapper-scroll" style="display: none;"> 
@@ -179,12 +179,12 @@
   </div>
 
   <div class='details1'>
-    <p id="see-details" class="invites-title3" style="display: none;"> You can expand each class to see full list of participants from that class.</p> 
+    <p id="see-details" class="invites-title3" style="display: none;"> And here is the full list of participants so far... </p> 
   </div>
 
   <div id="col1" class="col1" style="display: none;">
     <div class="class-names-container">
-  <details class='summary-box'>
+  <details class='summary-box' open>
   <summary>M19s</summary>
       <div id="m19-class-list" class="class-list">
       </div>
@@ -193,7 +193,7 @@
   </div>
   <div id="col2" class="col2"  style="display: none;">
         <div class="class-names-container">
-  <details class='summary-box'>
+  <details class='summary-box' open>
   <summary>M20s</summary>
       <div id="m20-class-list" class="class-list">
       </div>
@@ -202,7 +202,7 @@
   </div>
   <div id="col3"  class="col3"  style="display: none;">
         <div class="class-names-container">
-  <details class='summary-box'>
+  <details class='summary-box' open>
   <summary>M21s</summary>
       <div id="m21-class-list" class="class-list">
       </div>
@@ -211,7 +211,7 @@
   </div>
   <div id="col4" class="col4"  style="display: none;">
         <div class="class-names-container">
-  <details class='summary-box'>
+  <details class='summary-box' open>
   <summary>M22s</summary>
       <div id="m22-class-list" class="class-list">
       </div>
@@ -220,7 +220,7 @@
   </div>
   <div id="col5" class="col5"  style="display: none;">
         <div class="class-names-container">
-  <details class='summary-box'>
+  <details class='summary-box' open>
   <summary>M23s</summary>
       <div id="m23-class-list" class="class-list">
       </div>
@@ -445,7 +445,7 @@
       document.getElementById("title2").innerHTML = "Looks like you already registered for Convivium 2024 - Yuhuu! Now it's time to see which of your friends will be joining you and send personalized invites to those who have not registered yet.";
     } else {
        document.getElementById("title1").innerHTML = "Hello Minervan!";
-       document.getElementById("title2").innerHTML = "Hmm... Looks like you have not registered for Convivium 2024 yet. No worries, take a look at who will be there from your friends and head over to <a href='registration.html'>Registration page</a> to submit your participation before October 1, 2023. Don't forget to invite your other friends too!";
+       document.getElementById("title2").innerHTML = "Take a look at who signed up for Convivium 2024 so far from your friends and head over to <a href='registration.html'>Registration page</a> to submit your participation before October 1, 2023. Don't forget to invite your other friends too!";
     }
     document.getElementById("emailSubmit").style.display = "none";
     document.getElementById("seal-img").style.display = "none";
