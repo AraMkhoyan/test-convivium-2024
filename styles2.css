@@ -1,0 +1,88 @@
+.scroll-name{
+  color: white;
+  font-family: "HelveticaNeue-Light";
+  margin-left: 5px;
+  margin-right: 5px;
+}
+ .wrapper-scroll {
+  position: absolute;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+ .scrolling-words-container {
+   display: flex;
+   align-items: center;
+   font-size: 2rem;
+   font-weight: 600;
+}
+ .scrolling-words-box {
+   height: 3rem;
+   margin: auto;
+   overflow: hidden;
+}
+ .scrolling-words-box .scroll-list {
+   margin: 0 0.625rem;
+   padding: 0;
+}
+.m19{
+     animation: scrollUp 10s infinite;
+}
+.m20{
+     animation: scrollUp 15s infinite;
+}
+.m21{
+     animation: scrollUp 12s infinite;
+}
+.m22{
+     animation: scrollUp 9s infinite;
+}
+.m23{
+     animation: scrollUp 14s infinite;
+}
+
+ .scrolling-words-box .scroll-list .scroll-name {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   height: 3rem;
+   list-style: none;
+}
+ @keyframes scrollUp {
+   7%, 10% {
+     transform: translateY(-9.0909090909%);
+  }
+   17%, 20% {
+     transform: translateY(-18.1818181818%);
+  }
+   27%, 30% {
+     transform: translateY(-27.2727272727%);
+  }
+   37%, 40% {
+     transform: translateY(-36.3636363636%);
+  }
+   47%, 50% {
+     transform: translateY(-45.4545454545%);
+  }
+   57%, 60% {
+     transform: translateY(-54.5454545455%);
+  }
+   67%, 70% {
+     transform: translateY(-63.6363636364%);
+  }
+   77%, 80% {
+     transform: translateY(-72.7272727273%);
+  }
+   87%, 90% {
+     transform: translateY(-81.8181818182%);
+  }
+   97%, 100% {
+     transform: translateY(-90.9090909091%);
+  }
+   107%, 110% {
+     transform: translateY(-100%);
+  }
+}
+
+ 

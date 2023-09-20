@@ -151,6 +151,33 @@ h3 {
   color: white;
 }
 
+.invites-title1{
+  text-align: center;
+  font-family: "HelveticaNeue-Light";
+  font-size: 40px;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  color: white;
+  overflow-wrap: break-word;
+}
+.invites-title2{
+  text-align: center;
+  font-family: "HelveticaNeue-Light";
+  font-size: 24px;
+  margin: 5px 0px;
+  color: white;
+  overflow-wrap: break-word;
+}
+.invites-title3{
+  text-align: center;
+  font-family: "HelveticaNeue-Light";
+  font-size: 18px;
+  margin: 5px 0px;
+  color: white;
+  overflow-wrap: break-word;
+}
+
+
 .countdown-container{
   text-align: center;
 }
@@ -295,6 +322,12 @@ input[type=submit]:hover {
   margin-bottom: 10px;
 }
 
+.class-names-container {
+  font-family: "HelveticaNeue-Light";
+  margin-bottom: 10px;
+}
+
+
 .main-title{
   width: 60%;
   height: auto;
@@ -348,6 +381,11 @@ summary:after{
   cursor: pointer;
 }
 
+.summary-box{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
 details[open] summary {
     border-bottom: 1px solid #aaa;
     margin-bottom: .5em;
@@ -357,7 +395,14 @@ details[open] summary:after{
   content: "\00D7";
 }
 
-details[open] .faq-answer{
+details[open] .faq-answer {
+  font-family: "HelveticaNeue-Light";
+  font-size: 17px;
+  padding: .5em 1em;
+  background-color: #353030;
+}
+
+details[open] .class-list{
   font-family: "HelveticaNeue-Light";
   font-size: 17px;
   padding: .5em 1em;
@@ -367,6 +412,46 @@ details[open] .faq-answer{
 .details-info{
   margin-top: -15px;
 }
+
+
+.marquee-email{
+  color: white;
+/*  color: color: rgba(215, 0, 0, 0.5);*/
+  font-size: 40%;
+  width: 100%;
+}
+
+
+.invites-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 200px 80px 80px 40px 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header1 header1 header1 header1 header1"
+    "names1 . names3 . names5"
+    ". names2 . names4 ."
+    "details1 details1 details1 details1 details1 "
+    "col1 col2 col3 col4 col5"
+    "footer1 footer1 . footer2 footer2";
+}
+
+.header1 { grid-area: header1; }
+.names1 { grid-area: names1; max-height: 100px;}
+.names2 { grid-area: names2; max-height: 100px;}
+.names3 { grid-area: names3;  max-height: 100px;}
+.names4 { grid-area: names4; max-height: 100px;}
+.names5 { grid-area: names5;  max-height: 100px;}
+.details1 { grid-area: details1;}
+.col1 { grid-area: col1; }
+.col2 { grid-area: col2; }
+.col3 { grid-area: col3; }
+.col4 { grid-area: col4; }
+.col5 { grid-area: col5; }
+.footer2 { grid-area: footer2; }
+.footer1 { grid-area: footer1; }
+
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
