@@ -25,6 +25,20 @@
     <h2> Please use larger device (laptop/PC) to view this page.</h2>
   </div>
 
+  <div class="w3-top" style="z-index: 2;">
+  <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
+<!--     <a href="index.html" class="w3-bar-item w3-button">CONVIVIUM 2024</a>-->
+<a href="index.html"> 
+      <img src="images/convivium-2024-no-bg.PNG" class="logo-img">
+   </a>
+    <div class="w3-right">
+      <a href="home.html" class="w3-bar-item w3-button nav-button">Details</a>
+      <a href="registration.html" class="w3-bar-item w3-button nav-button">Registration</a>
+      <a href="faq.html" class="w3-bar-item w3-button nav-button">FAQ</a>
+    </div>
+  </div>
+</div>
+
   <div class="invites-body">
   <img id= "convivium-logo-img" src="images/convivium-2024-no-bg.PNG" class="center-img">
 
@@ -38,7 +52,7 @@
 
  <div class="invites-grid">
   <div class="header1">
-      <p id="title1" class="invites-title1" style="margin-right: 10%; margin-left: 10%; margin-top: -10px;"></p> 
+      <p id="title1" class="invites-title1" style="margin-right: 10%; margin-left: 10%;"></p> 
       <p id="title2" class="invites-title2" style="margin-right: 10%; margin-left: 10%;"></p> <br><br>
   </div>
   <div class="names1">
@@ -368,6 +382,13 @@
     addScrollNames('m21', m21_names);
     addScrollNames('m22', m22_names);
     addScrollNames('m23', m23_names);
+
+    m19_full_names.sort()
+    m20_full_names.sort()
+    m21_full_names.sort()
+    m22_full_names.sort()
+    m23_full_names.sort()
+
 
     m19_full_names.forEach((name) => {
       document.getElementById("m19-class-list").innerHTML += name + "<br>";
