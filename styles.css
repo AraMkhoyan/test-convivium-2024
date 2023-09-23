@@ -10,6 +10,7 @@ h1{
 } 
 
 h2 {
+  color: white;
   font-size: 36px;
 }
 
@@ -121,6 +122,35 @@ h3 {
 /* Style the checkbox label */
 .callout-checkbox label {
   margin-left: 10px;
+}
+
+.c2c-button {
+  width: fit-content;
+  height: 40px;
+  background-color: gray;
+  color: white;
+  box-shadow: grey;
+  position: absolute;
+}
+
+.c2c-text {
+  font-family: "HelveticaNeue-Light";
+  color: white;
+  margin: 5px 0px;
+  width: 350px;
+  background-color: rgba(85, 85, 85, 0.7);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+#tooltip {
+  display: none;
+  background-color: #333;
+  color: white;
+  position: absolute;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: small;
 }
 
 .background {
