@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Serif:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/seal-logo.PNG"/>
+  <title>Registration</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7NB4LF8R9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7NB4LF8R9Q');
+</script>
+
+<body class="reg-body">
+
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-padding w3-card" style="letter-spacing:4px;">
+   <a href="index.html"> 
+      <img src="images/convivium-2024-no-bg.PNG" class="logo-img">
+   </a> 
+   <div class="w3-right">
+      <a href="home.html" class="w3-bar-item w3-button nav-button">Details</a>
+      <a href="attendees.html" class="w3-bar-item w3-button nav-button">Attendees</a>
+      <a href="faq.html" class="w3-bar-item w3-button nav-button">FAQ</a>
+    </div>
+  </div>
+</div>
+
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+    <img class="w3-image" src="images/con-bg-img.png" width="1600" height="500">
+    <div class="w3-display-bottomleft w3-padding-large">
+      <h1 class="w3-xxlarge" style="color: white;">Attendance Confirmation</h1>
+  </div>
+</header>
+
+<div class="w3-content" style="max-width:1100px">
+
+<div class="reg-form w3-display-container w3-black-form w3-round-xlarge">
+  <h5 id="msg"></h5>
+
+  <h5 id="formTitle1" style="color:white;"> Convivium 2024 Attendance Confirmation Form </h5>
+
+   <p id="formTitle2" style="color:white;"> Final Attendance Confirmation for Convivium 2024! If you have any questions please reach out to us at <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a>.</p>
+
+
+   <br>
+
+   <p id="headerMessage1" style="display:none"> </p>
+   <p id="headerMessage2" style="display:none"> </p>
+   <p id="headerMessage3" style="display:none"> </p>
+   <p id="headerMessage4" style="display:none"> </p>
+
+
+  <div  class="reg-form w3-display-container w3-round-xlarge" >
+  <form id="emailSubmit" class="registration-form" style="text-align: center;">
+  <div id="email-message" class="email-val-message" style="width:100px;"></div>
+    <label for="email" style="color: white; float: left;">Email address</label><br>
+    <input type="email" id="email" name="email" placeholder="Your Minerva University email address..." required><br><br>
+    <br><input type="submit" id="sub">
+  </form>
+
+    <form id="registrationForm" class="registration-form" style="display:none;">
+      <br><br>
+      <div id="paymentConfirmation" style="display:block;">
+      <label for="paymentOption">What payment option do you prefer for your final payment?</label><br>
+      <p id="amountDueText" style="display:none"> </p>
+      <select id="paymentOptionInput" name="paymentOption" onchange="showPaymentDetails(this)">
+      <option value="">Please select</option>
+      <option value="venmo">Venmo (US only) </option>
+      <option value="bankTransfer">Bank Transfer (EU and UK only) </option>
+      <option value="payPal">PayPal</option>
+    </select> <br><br>
+
+      <div id="venmo-details" class="callout" style="display:none;"> <p class="payment-info"> Please use the following link for Venmo Payments <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024</a>. Please include "Convivium + Your Full Name" in the transfer note. </p> </div>
+
+      <div id="paypal-details" class="callout" style="display:none;"> <p class="payment-info"> Please use the following link for PayPal Payments <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a>.</p> 
+      <ul>
+        <li>Please make sure that the Convivium team receives the exact amount as any foreign exchange and transfer fees are your responsibility.</li>
+        <li>Please include "Convivium + Your Full Name" in the tranfer note.</li>
+        <li>Please select the "For Friends and Family" option. </li>
+      </ul>
+      </div>
+
+      <div id="bank-details" class="callout" style="display:none;"> <p> This option is only available for payments from the EU or UK. Please use the following Bank Transfer Details. </p> 
+      <p> UK Transfers (GBP): </p>
+      <ul>
+        <li>Sort Code: 04-00-75</li>
+        <li>Account Number: 45773793</li>
+      </ul>
+      <p> EU Transfers (EUR): </p> 
+      <ul>
+        <li>IBAN: LT66 3250 0925 6384 2300</li>
+        <li>BIC: REVOLT21</li>
+      </ul>
+      <p>Please include "Convivium + Your Full Name" in the tranfer note. Make sure the Convivium team receives the equivalent amount in USD. For the confirmation number field below, please enter the account holder's name, the time when the tranfer was made, and/or any identifiable information if applicable.</p>
+      </div>
+
+     <label for="paymentConfirmation">Please enter your payment confirmation number (PayPal) or transaction ID (Venmo). For Bank Transfer, enter the account holder's name, transfer date, and any identifiable information if applicable. </label><br>
+     <input type="text" id="paymentConfirmationInput" name="paymentConfirmation" placeholder="Please enter your payment confirmation number"><br><br>
+
+     <label for="donation">If you donated any amount to the Minerva Alumni council's funds, please specify the amount below.</label><br>
+     <input type="text" id="donation" name="donation" placeholder="Please specify your donation amount, if any."><br><br>
+
+    <label for="anythingElse">Anything else you would like us to know?</label><br>
+    <input type="text" id="anythingElse" name="anythingElse" placeholder="Add details here..."><br><br>
+        <div class="callout-checkbox">
+          <input type="checkbox" name= "PolicyCheckbox" required>
+          <label for="PolicyCheckbox">I read, understood, and agree to the policies specified on  <a href="registration.html">the initial registration form</a>.</label>
+        </div>
+    <br><input type="submit" id="subReg"> 
+  </form>
+
+</div>
+</div>
+
+</div>
+  <hr>
+<div class="w3-container w3-padding-64" id="contact" style="color:white;">
+    <h1>Contact</h1>
+    <p>If you have any questions please contact us at <a href="mailto:convivium2024@gmail.com">convivium2024@gmail.com</a></p>
+  </div>
+      <img src="images/seal-logo.PNG" class="bottom-seal-img">
+
+<script>
+
+    // let form = document.querySelector("form");
+    let form = document.getElementById("emailSubmit");
+
+      let isValidEmail = false;
+  document.addEventListener("DOMContentLoaded", function () {
+    const emailInput = document.getElementById("email");
+
+    emailInput.addEventListener('input', (e) => {
+      e.preventDefault();
+      const emailValue = emailInput.value;
+      // Regular expression to match the domain after '@'
+      const regex = /@(uni\.minerva\.edu)$/;
+
+      if (regex.test(emailValue)) {
+        isValidEmail = true;
+      } else {
+        isValidEmail = false;
+      }
+    })
+  })
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // The preventDefault() method stops the form from submitting and prevents the page from refreshing.
+      document.querySelector("#sub").value = "Submitting...";
+
+      const sheetID = '1dTHLLX7GK_7ybERevDxNxPduqbLh-GK8bFLaYsTDGLg';
+      const base = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?`;
+      const sheetName = 'Sheet1';
+
+      const query = encodeURIComponent('SELECT * ');
+      const url = `${base}&sheet=${sheetName}&tq=${query}&headers=1`;
+      const data = [];
+
+      init()
+
+    function init(){
+      fetch(url)
+      .then(res => res.text())
+      .then(rep => {
+        // console.log(rep)
+        const colz = [];
+        const jsData =  JSON.parse(rep.substr(47).slice(0,-2));
+        jsData.table.cols.forEach((heading) => {
+          if(heading.label) {
+            colz.push(heading.label.toLowerCase().replace(/\s/g, '' ));
+          }
+        })
+        //console.log(jsData)
+        jsData.table.rows.forEach((main) => {
+          const row = {};
+          colz.forEach((ele, ind) => {
+            row[ele] = (main.c[ind] != null) ? main.c[ind].v : '';
+          })
+          data.push(row);
+        })
+
+    const emailInput = document.getElementById("email").value;
+    console.log(data)
+
+    userName = "";
+    userLName = "";
+    fulluserName = "";
+    userEmail = "";
+    isRegistered = false;
+    isFinancialAid = false;
+    amountPaid = "";
+    amountNeeded = "";
+
+    data.forEach((user) => {
+      if(user['emailaddress'] == emailInput) {
+        isRegistered = true
+        userName = user['firstname']
+        userLName = user['lastname']
+        fulluserName = user['firstname'] + " " + user['lastname']
+        userEmail = user['emailaddress']
+        if (user['financialaid[checkbox]'] == "on" ) {
+          isFinancialAid = true
+        }
+        amountPaid = user['amountrecieved']
+        amountNeeded = user['amountduejanuary15']
+      }
+    })
+
+    // console.log(
+    //   userName,
+    //   fulluserName,
+    //   userEmail,
+    //   isRegistered,
+    //   isFinancialAid,
+    //   amountPaid,
+    //   amountNeeded
+    //   )
+
+    
+
+    document.getElementById("emailSubmit").style.display = "none";
+    if (isRegistered && !isFinancialAid && amountNeeded==0) {
+      document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
+      document.getElementById("headerMessage1").style.display = "block";
+      document.getElementById("headerMessage1").innerHTML = "It's official - We will see you at Convivium 2024!"; 
+      document.getElementById("headerMessage2").style.display = "block";
+      document.getElementById("headerMessage2").innerHTML = "This page serves as a confirmation that we recieved your registration and all required payments. Nothing is needed from your side anymore, just seat back and wait for an email about more details and logistics about the event. As always, if you have any questions about the Convivium 2024, please reach out to organizers at convivium2024@gmail.com";
+    }
+    else  if (isRegistered && !isFinancialAid && amountNeeded!=0) {
+      document.getElementById("registrationForm").style.display =  'inline-block';
+      document.getElementById("paymentOptionInput").required = true;
+      document.getElementById("paymentConfirmationInput").required = true;
+      document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
+      document.getElementById("headerMessage1").style.display = "block";
+      document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024! This form is for the final payment for your attendance. Please submit this form by January 15, 2024 to confirm your spot at Convivum 2024. If you already paid the second payment, please allow a few days for organizers to confirm your payment before returning to this page to check your remaining balance.";
+      document.getElementById("headerMessage2").style.display = "block";
+      document.getElementById("headerMessage2").innerHTML = "We recieved $" + amountPaid + " from you - Thank you for your initial payment.";
+      document.getElementById("headerMessage3").style.display = "block";
+      document.getElementById("headerMessage3").innerHTML = "The remaining balance due January 15, 2024 is $" + amountNeeded + ". Please use this form to submit your final payment.";
+      document.getElementById("amountDueText").style.display = "block";
+      document.getElementById("amountDueText").innerHTML = "Amount Due: $" + amountNeeded;
+
+    }
+    else if (isRegistered && isFinancialAid) {
+      document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
+      document.getElementById("headerMessage1").style.display = "block";
+      document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024!";
+      document.getElementById("headerMessage2").style.display = "block";
+      document.getElementById("headerMessage2").innerHTML = "It looks like you applied for Financial Aid to help you cover for your attendance. Your financial aid decision is still under review. Please wait until you hear back from us on your approved aid before returning to this page to submit your final payment and confirmation. Due to delays in decisions for Financial Aid applications, the January 15, 2024 deadline for the final payment will be extended for you. If you have any questions, please reach out to organizers at convivium2024@gmail.com";
+    }
+    else {
+      document.getElementById("formTitle2").innerHTML = "Hmm... it looks like we do not have a registration with that email address. If you believe there was a technical issue or have questions about submitting a registration for Convivium 2024, please reach out to organizers at convivium2024@gmail.com"
+    }
+  })
+  }
+   
+
+    //Confirmation FORM
+    let regform = document.getElementById("registrationForm")
+
+    regform.addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.querySelector("#subReg").value = "Submitting...";
+
+        let regData = new FormData(regform);
+        regData.append('fname', userName);
+        regData.append('lname', userLName);
+        regData.append('emailAddress', userEmail);
+        regData.append('amountPaid', amountPaid);
+        regData.append('amountNeeded', amountNeeded);
+        // The FormData() method creates a new FormData object that contains the values of all the form fields.
+        fetch('https://script.google.com/macros/s/AKfycbwqd46N1zJsO750D5UONJZU98eLvA2La0cvImgAzM2sNbTtHU3slHhRbaNuksLZfST50g/exec', {
+          method: "POST",
+          body: regData
+        })
+        // The fetch() method is used to make a request to the server and retrieve data.
+        // This is an example API endpoint. Replace it with the actual URL for the API endpoint you want to use.
+        .then(res => res.text())
+        // The .then() method is used to handle the response from the server.
+        // The response is converted to text using the res.text() method.
+        .then(data => {
+          document.querySelector("#msg").innerHTML = data;
+          document.querySelector("#sub").value = "Submitted"
+        })
+        .then( event => {
+          document.getElementById("formTitle2").innerHTML = "Thank you for submitting the final registration form for Convivium 2024."
+          document.getElementById("registrationForm").style.display =  'none';
+          document.getElementById("headerMessage1").style.display = "block";
+          document.getElementById("headerMessage1").innerHTML = "Please allow a few days for organizers to confirm your payment before returning to this page to see your confirmation for Convivium 2024 attendance.";
+          document.getElementById("headerMessage2").style.display = "none";
+          document.getElementById("headerMessage3").style.display = "none";
+          document.getElementById("amountDueText").style.display = "none";
+        })
+    })
+
+   })
+
+  function showPaymentDetails(element){
+    document.getElementById("venmo-details").style.display = element.value == "venmo" ? 'block' : 'none';
+    document.getElementById("paypal-details").style.display = element.value == "payPal" ? 'block' : 'none';
+    document.getElementById("bank-details").style.display = element.value == "bankTransfer" ? 'block' : 'none';
+
+  }
+
+</script>
+</body>
+</html>
