@@ -232,7 +232,7 @@
     
 
     document.getElementById("emailSubmit").style.display = "none";
-    if (isRegistered && !isFinancialAid && !isSingleRoom && amountNeeded==0) {
+    if (isRegistered && !isFinancialAid && !isSingleRoom && amountNeeded<=0) {
       document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
       document.getElementById("headerMessage1").style.display = "block";
       document.getElementById("headerMessage1").innerHTML = "It's official - We will see you at Convivium 2024!"; 
