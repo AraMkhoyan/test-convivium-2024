@@ -257,25 +257,25 @@
       document.getElementById("amountDueText").style.display = "block";
       document.getElementById("amountDueText").innerHTML = "Amount Due: $" + amountNeeded;
     }
-    else if (isRegistered && isFinancialAid && !minervafinAidDecisionReady) {
-      document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
-      document.getElementById("headerMessage1").style.display = "block";
-      document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024!";
-      document.getElementById("headerMessage2").style.display = "block";
-      document.getElementById("headerMessage2").innerHTML = `It looks like you applied for Financial Aid to help you cover for your attendance. We are excited to announce we are collaborating with Minerva to help you cover part of the costs to help you attend Convivium 2024. Please head over to  <a href="https://momentuminitiative.my.canva.site/_link/?link=https%3A%2F%2F1hfgw1hnfaw.typeform.com%2Fto%2FULmJSBCH&target=fWRJWmH8CWf9bSih4MJicMhABea%2FVIYnom%2B0%2Fa42gv1PaI3it3HLpSaI4PzwyW2tHWrZmjDYXO8Mhk7VESAPJtPTBMimIK8iaFPZCuyi7hIkLHvzUFC51E0S1mWaIs28DzidZOdfrpI8jOT3XFWwdLjYTAwr2g%3D%3D&iv=UH9EqV5lXm1Gwgmd"> Alumni Community Fund Application</a> and submit financial aid request to help you attend Convivium. Please note, only participants who are residing outside New York City and need support to reach New York City (airplane/train/bus ticket) are eligible to apply to this Fund, applications are rolling basis and aid will be available on a first come first serve basis while Minerva resources last, this aid does not directly cover the Convivium 2024 ticket cost but it helps to significantly lower the cost of attendance for you, the maximum aid that Minerva can approve is the amount of financial aid requested while submitting the registration form for Convivium 2024. Due to delays in decisions for Financial Aid applications, the January 30, 2024 deadline for the final payment will be extended for you. If you have any questions or your financial aid situation has changed, please reach out to organizers at convivium2024@gmail.com`;
-    }
-    //   else if (isRegistered && isFinancialAid && !minervafinAidDecisionReady) {
-    //   document.getElementById("registrationForm").style.display =  'inline-block';
+    // else if (isRegistered && isFinancialAid && !minervafinAidDecisionReady) {
     //   document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
     //   document.getElementById("headerMessage1").style.display = "block";
-    //   document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024! We are excited to let you know that your financial aid request has been approved! Please see details below and submit your final payment.";
-    //         document.getElementById("headerMessage2").style.display = "block";
-    //   document.getElementById("headerMessage2").innerHTML = "Minerva Fund approval (applies towards travel): $0" ;
-    //   document.getElementById("headerMessage3").style.display = "block";
-    //   document.getElementById("headerMessage3").innerHTML = "Convivium aid approval (applies towards ticket cost): $" + finAidConviviumApproval;
-    //   document.getElementById("amountDueText").style.display = "block";
-    //   document.getElementById("amountDueText").innerHTML = "Amount Due: $" + finaAidPaymentDue;
+    //   document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024!";
+    //   document.getElementById("headerMessage2").style.display = "block";
+    //   document.getElementById("headerMessage2").innerHTML = `It looks like you applied for Financial Aid to help you cover for your attendance. We are excited to announce we are collaborating with Minerva to help you cover part of the costs to help you attend Convivium 2024. Please head over to  <a href="https://momentuminitiative.my.canva.site/_link/?link=https%3A%2F%2F1hfgw1hnfaw.typeform.com%2Fto%2FULmJSBCH&target=fWRJWmH8CWf9bSih4MJicMhABea%2FVIYnom%2B0%2Fa42gv1PaI3it3HLpSaI4PzwyW2tHWrZmjDYXO8Mhk7VESAPJtPTBMimIK8iaFPZCuyi7hIkLHvzUFC51E0S1mWaIs28DzidZOdfrpI8jOT3XFWwdLjYTAwr2g%3D%3D&iv=UH9EqV5lXm1Gwgmd"> Alumni Community Fund Application</a> and submit financial aid request to help you attend Convivium. Please note, only participants who are residing outside New York City and need support to reach New York City (airplane/train/bus ticket) are eligible to apply to this Fund, applications are rolling basis and aid will be available on a first come first serve basis while Minerva resources last, this aid does not directly cover the Convivium 2024 ticket cost but it helps to significantly lower the cost of attendance for you, the maximum aid that Minerva can approve is the amount of financial aid requested while submitting the registration form for Convivium 2024. Due to delays in decisions for Financial Aid applications, the January 30, 2024 deadline for the final payment will be extended for you. If you have any questions or your financial aid situation has changed, please reach out to organizers at convivium2024@gmail.com`;
     // }
+      else if (isRegistered && isFinancialAid && !minervafinAidDecisionReady) {
+      document.getElementById("registrationForm").style.display =  'inline-block';
+      document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
+      document.getElementById("headerMessage1").style.display = "block";
+      document.getElementById("headerMessage1").innerHTML = "Thank you once again for joining Convivium 2024! We are excited to let you know that your financial aid request has been approved! Please see details below and submit your final payment.";
+            document.getElementById("headerMessage2").style.display = "block";
+      document.getElementById("headerMessage2").innerHTML = "Minerva Fund approval (applies towards travel): $0" ;
+      document.getElementById("headerMessage3").style.display = "block";
+      document.getElementById("headerMessage3").innerHTML = "Convivium aid approval (applies towards ticket cost): $" + finAidConviviumApproval;
+      document.getElementById("amountDueText").style.display = "block";
+      document.getElementById("amountDueText").innerHTML = "Amount Due: $" + finaAidPaymentDue;
+    }
     else if (isRegistered && isFinancialAid && minervafinAidDecisionReady) {
       document.getElementById("registrationForm").style.display =  'inline-block';
       document.getElementById("formTitle2").innerHTML = "Welcome back " + userName + "!";
