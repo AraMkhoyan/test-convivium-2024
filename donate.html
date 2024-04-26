@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles2.css">
+  <link rel="icon" type="image/png" href="images/seal-logo.PNG"/>
+  <title>Convivium 2024</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+      margin-top: 50px;
+      float: left;
+      text-align: center;
+      color: white;
+      width: 33.33%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      text-align: center;
+      display: table;
+      clear: both;
+      margin-right: 5%;
+      margin-left: 5%;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+</style>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7NB4LF8R9Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7NB4LF8R9Q');
+</script>
+
+<body>
+  
+  <div> <p id="subtitle1" class="subtitle1" style="margin-top:8%; margin-left:3%; margin-right:3%;">Donate & Enter for a chance to win Limited Convivium Merch!</p> 
+  </div>
+
+  <div class="row">
+  <div class="column left">
+    <img src="images/venmo.png" style="height:100px;width: 100px;">
+    <p>@convivium2024</p>
+      <p class="payment-info"> Please use the following link for Venmo Payments <a href="https://venmo.com/u/convivium2024" target="_blank"> https://venmo.com/u/convivium2024</a></p>
+  </div>
+  <div class="column middle">
+    <img src="images/paypal.png" style="height:100px;width: 100px;">
+        <p>@convivium2024</p>
+    <p class="payment-info"> Please use the following link for PayPal Payments <a href="https://www.paypal.com/paypalme/convivium2024" target="_blank"> https://www.paypal.com/paypalme/convivium2024</a></p>
+  </div>
+  <div class="column right">
+    <img src="images/bank.png" style="height:100px;width: 100px;">
+    <p> UK Transfers (GBP): </p>
+        <p>Sort Code: 04-00-75, Account Number: 45773793</p>
+        <p></p>
+      <p> EU Transfers (EUR): </p> 
+        <p>IBAN: LT66 3250 0925 6384 2300, BIC: REVOLT21<</p>
+        <p></p>
+  </div>
+</div>
+
+  <div> <p id="subtitle2" class="subtitle2" style="margin-top:25px; margin-left:3%; margin-right:3%;padding-bottom: 30px;">Every $5 donation grants an entry into the raffle for a limited time Convivium Merch brought to us by Tanna Krispil from M19. Please add your name and class to the payment notes to enter the raffle. </p> 
+  </div>
+
+  <img src="images/seal-logo.PNG" class="bottom-seal-img" id="bottom-seal-img">
+
+</body>
+</html>
